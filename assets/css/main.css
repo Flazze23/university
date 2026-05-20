@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-ink-900 text-fog-soft font-sans;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.025) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+  ::selection {
+    @apply bg-accent text-white;
+  }
+  h1, h2, h3, h4 {
+    @apply text-white;
+  }
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #0a0a0b; }
+  ::-webkit-scrollbar-thumb { background: #2d2d36; border-radius: 6px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a3a45; }
+}
+
+@layer components {
+  .container-x {
+    @apply max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 font-semibold
+           rounded-md transition-all duration-200 active:scale-[.98] select-none;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover hover:shadow-accent-glow;
+  }
+  .btn-ghost {
+    @apply btn border border-line text-white hover:border-accent hover:text-accent;
+  }
+  .btn-dark {
+    @apply btn bg-ink-700 text-white hover:bg-ink-600 border border-line;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs
+           font-semibold uppercase tracking-mega bg-ink-700 border border-line;
+  }
+  .card {
+    @apply bg-ink-800 border border-line rounded-lg overflow-hidden transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-line-strong hover:shadow-card hover:-translate-y-1;
+  }
+  .h-display {
+    @apply font-display tracking-mega text-white;
+  }
+  .input {
+    @apply w-full bg-ink-800 border border-line rounded-md px-4 py-3 text-white
+           placeholder-fog focus:outline-none focus:border-accent transition-colors;
+  }
+  .label {
+    @apply block text-xs uppercase tracking-mega text-fog mb-2 font-semibold;
+  }
+  .badge-hit {
+    @apply bg-accent text-white;
+  }
+  .badge-new {
+    @apply bg-gold text-ink-900;
+  }
+  .badge-sale {
+    @apply bg-success text-ink-900;
+  }
+  .section-title {
+    @apply font-display text-3xl md:text-5xl tracking-mega text-white;
+  }
+  .section-eyebrow {
+    @apply text-accent text-xs font-bold uppercase tracking-mega mb-3;
+  }
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.page-enter-from { opacity: 0; transform: translateY(8px); }
+.page-leave-to   { opacity: 0; transform: translateY(-8px); }
+
+/* Marquee row */
+.marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}

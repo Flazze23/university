@@ -1,0 +1,26 @@
+{
+  "name": "turbochem",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.6.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@pinia/nuxt": "^0.5.5",
+    "nuxt": "^3.14.0",
+    "typescript": "^5.6.3",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "^11.2.0",
+    "pinia": "^2.2.6"
+  }
+}
